@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import { motion } from "framer-motion";
 
 function Resume() {
-  const resumePdf = "/assets/NATNAEL.pdf";
+  const resumePdf = "/assets/My_Resume.pdf";
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -86,7 +86,7 @@ function Resume() {
             <div className="mt-6">
               <motion.a
                 href={resumePdf}
-                download="NATNAEL.pdf"
+                download="Resume.pdf"
                 whileHover={buttonHover}
                 whileTap={{ scale: 0.98 }}
                 className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md text-lg transition duration-300"
