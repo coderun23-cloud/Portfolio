@@ -1,9 +1,16 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { motion } from "framer-motion";
+import {
+  EnvelopeIcon,
+  PhoneIcon,
+  MapPinIcon,
+  GithubIcon,
+  LinkedinIcon,
+} from "../components/Icons"; // You'll need to create or import these icons
 
 function Resume() {
-  const resumePdf = "/assets/My_Resume.pdf";
+  const resumePdf = "/assets/My CVResume.pdf";
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -46,9 +53,8 @@ function Resume() {
     },
   };
 
-  const linkHover = {
-    scale: 1.02,
-    color: "#93c5fd", // lighter blue
+  const iconHover = {
+    scale: 1.2,
     transition: { duration: 0.2 },
   };
 
@@ -65,10 +71,10 @@ function Resume() {
           {/* Resume Header */}
           <motion.div
             variants={sectionVariants}
-            className="bg-blue-900 p-8 text-center"
+            className="text-center mb-12 p-10"
           >
             <motion.h1
-              className="text-4xl font-bold mb-2"
+              className="text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, type: "spring" }}
@@ -76,186 +82,217 @@ function Resume() {
               NATNAEL GETACHEW
             </motion.h1>
             <motion.h2
-              className="text-2xl text-blue-300"
+              className="text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-400"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, type: "spring" }}
             >
               FULL STACK WEB DEVELOPER
             </motion.h2>
-            <div className="mt-6">
+            <div className="mt-8">
               <motion.a
                 href={resumePdf}
                 download="Resume.pdf"
                 whileHover={buttonHover}
                 whileTap={{ scale: 0.98 }}
-                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md text-lg transition duration-300"
+                className="inline-block relative group"
               >
-                Download Resume
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-200"></div>
+                <div className="relative px-6 py-3 bg-gray-900 rounded-lg border border-gray-700 text-lg">
+                  Download Resume
+                </div>
               </motion.a>
             </div>
           </motion.div>
 
           {/* Resume Sections */}
-          <div className="p-8 space-y-12">
-            {[
-              {
-                title: "CONTACT",
-                content: (
-                  <motion.ul className="space-y-2" variants={fadeIn}>
-                    <li>Phone: +251982847827</li>
-                    <li>Email: ngetachew277@gmail.com</li>
-                    <li>Location: Addis Ababa</li>
-                  </motion.ul>
-                ),
-              },
-              {
-                title: "PROFILE",
-                content: (
-                  <motion.p variants={fadeIn}>
-                    Detail-oriented and innovative web developer with hands-on
-                    experience building responsive, full-stack applications.
-                    Skilled in Laravel, React.js, MySQL, Tailwind CSS,
-                    Bootstrap, and RESTful APIs, with practical knowledge of
-                    Postman for API testing and debugging. A natural
-                    collaborator who thrives in team settings—both in tech and
-                    in sports—bringing strong communication, adaptability, and
-                    strategic thinking from soccer and basketball into every
-                    development project. Committed to creating scalable,
-                    user-focused solutions that drive real-world impact.
-                  </motion.p>
-                ),
-              },
-              {
-                title: "EDUCATION",
-                content: (
-                  <motion.div variants={fadeIn}>
-                    <h4 className="font-bold">
-                      2021 - 2025 • ST MARY'S UNIVERSITY
-                    </h4>
-                    <ul className="list-disc pl-5 mt-2">
-                      <li>Bachelor of Computer Science</li>
-                      <li>GPA: 3.6/4.0</li>
-                    </ul>
-                  </motion.div>
-                ),
-              },
-              {
-                title: "SKILLS",
-                content: (
-                  <motion.div
-                    className="grid grid-cols-1 md:grid-cols-2 gap-4"
-                    variants={fadeIn}
-                  >
-                    <div>
-                      <h4 className="font-bold mb-2">Technical Skills</h4>
-                      <ul className="list-disc pl-5 space-y-1">
-                        <li>Laravel</li>
-                        <li>React JS</li>
-                        <li>Tailwind CSS and Bootstrap</li>
-                        <li>MySQL</li>
-                        <li>GitHub/Git</li>
-                        <li>Postman</li>
-                        <li>REST API</li>
-                        <li>C++ Programming</li>
-                        <li>API Integration</li>
-                        <li>Software Documentation</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-bold mb-2">Other Skills</h4>
-                      <ul className="list-disc pl-5 space-y-1">
-                        <li>Adaptability and Problem Solving</li>
-                        <li>Teamwork and Collaboration</li>
-                        <li>JavaScript and PHP</li>
-                      </ul>
-                    </div>
-                  </motion.div>
-                ),
-              },
-              {
-                title: "WORK EXPERIENCE",
-                content: (
-                  <motion.div variants={fadeIn}>
-                    <h4 className="font-bold">Adika Taxi Services PLC.</h4>
-                    <p className="text-blue-300 mb-2">
-                      Full Stack Web Developer
-                    </p>
-                    <ul className="list-disc pl-5 space-y-2">
-                      <li>
-                        Designed and developed a full-stack driver registration
-                        system at Adika Taxi PLC—leveraging Laravel for RESTful
-                        API development and backend logic, React.js with JSX for
-                        dynamic user interfaces, MySQL for structured data
-                        management, and Tailwind CSS alongside Bootstrap for
-                        responsive and modular styling.
-                      </li>
-                      <li>
-                        Utilized Postman extensively to test, debug, and
-                        document API endpoints, ensuring robust integration
-                        between frontend and backend components.
-                      </li>
-                    </ul>
-                  </motion.div>
-                ),
-              },
-              {
-                title: "LANGUAGES",
-                content: (
-                  <motion.ul className="list-disc pl-5" variants={fadeIn}>
-                    <li>English (Fluent)</li>
-                    <li>Amharic (Native)</li>
-                  </motion.ul>
-                ),
-              },
-              {
-                title: "ONLINE PRESENCE",
-                content: (
-                  <motion.ul className="space-y-2" variants={fadeIn}>
-                    <li>
-                      <motion.a
-                        href="https://github.com/coderun23-cloud"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-400 hover:text-blue-300"
-                        whileHover={linkHover}
-                      >
-                        GitHub
-                      </motion.a>
-                    </li>
-                    <li>
-                      <motion.a
-                        href="https://www.linkedin.com/in/natnael-getachew-798507256/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-400 hover:text-blue-300"
-                        whileHover={linkHover}
-                      >
-                        LinkedIn
-                      </motion.a>
-                    </li>
-                  </motion.ul>
-                ),
-              },
-            ].map((section, i) => (
-              <motion.div
-                key={i}
-                variants={sectionVariants}
-                className="space-y-4"
-                whileHover={{
-                  x: 5,
-                  transition: { duration: 0.3 },
-                }}
-              >
-                <motion.h3
-                  className="text-2xl font-bold text-blue-400 border-b border-blue-500 pb-2"
-                  whileHover={{ color: "#93c5fd" }} // lighter blue on hover
-                >
-                  {section.title}
-                </motion.h3>
-                {section.content}
+          <div className="space-y-12 px-8 pb-10">
+            {/* Contact Section */}
+            <motion.div
+              variants={sectionVariants}
+              className="relative p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-400/30 transition-all"
+              whileHover={{ y: -3 }}
+            >
+              <motion.h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 border-b border-gray-700 pb-2 mb-4">
+                CONTACT
+              </motion.h3>
+              <motion.div className="space-y-3" variants={fadeIn}>
+                <div className="flex items-center gap-3">
+                  <PhoneIcon className="w-5 h-5 text-blue-400" />
+                  <span>+251982847827</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <EnvelopeIcon className="w-5 h-5 text-blue-400" />
+                  <span>ngetachew277@gmail.com</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <MapPinIcon className="w-5 h-5 text-blue-400" />
+                  <span>Addis Ababa</span>
+                </div>
               </motion.div>
-            ))}
+            </motion.div>
+
+            {/* Profile Section */}
+            <motion.div
+              variants={sectionVariants}
+              className="relative p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-400/30 transition-all"
+              whileHover={{ y: -3 }}
+            >
+              <motion.h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 border-b border-gray-700 pb-2 mb-4">
+                PROFILE
+              </motion.h3>
+              <motion.p variants={fadeIn} className="text-gray-300">
+                Detail-oriented and innovative web developer with hands-on
+                experience building responsive, full-stack applications. Skilled
+                in Laravel, React.js, MySQL, Tailwind CSS, Bootstrap, and
+                RESTful APIs, with practical knowledge of Postman for API
+                testing and debugging. A natural collaborator who thrives in
+                team settings—both in tech and in sports—bringing strong
+                communication, adaptability, and strategic thinking from soccer
+                and basketball into every development project. Committed to
+                creating scalable, user-focused solutions that drive real-world
+                impact.
+              </motion.p>
+            </motion.div>
+
+            {/* Education Section */}
+            <motion.div
+              variants={sectionVariants}
+              className="relative p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-400/30 transition-all"
+              whileHover={{ y: -3 }}
+            >
+              <motion.h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 border-b border-gray-700 pb-2 mb-4">
+                EDUCATION
+              </motion.h3>
+              <motion.div variants={fadeIn}>
+                <h4 className="font-bold text-blue-300">
+                  2021 - 2025 • ST MARY'S UNIVERSITY
+                </h4>
+                <div className="mt-2 text-gray-300 space-y-1">
+                  <p>Bachelor of Computer Science</p>
+                  <p>GPA: 3.6/4.0</p>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Skills Section */}
+            <motion.div
+              variants={sectionVariants}
+              className="relative p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-400/30 transition-all"
+              whileHover={{ y: -3 }}
+            >
+              <motion.h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 border-b border-gray-700 pb-2 mb-4">
+                SKILLS
+              </motion.h3>
+              <motion.div
+                className="grid grid-cols-1 md:grid-cols-2 gap-4"
+                variants={fadeIn}
+              >
+                <div>
+                  <h4 className="font-bold mb-2 text-blue-300">
+                    Technical Skills
+                  </h4>
+                  <div className="space-y-1 text-gray-300">
+                    <p>Laravel</p>
+                    <p>React JS</p>
+                    <p>Tailwind CSS and Bootstrap</p>
+                    <p>MySQL</p>
+                    <p>GitHub/Git</p>
+                    <p>Postman</p>
+                    <p>REST API</p>
+                    <p>C++ Programming</p>
+                    <p>API Integration</p>
+                    <p>Software Documentation</p>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-bold mb-2 text-blue-300">Other Skills</h4>
+                  <div className="space-y-1 text-gray-300">
+                    <p>Adaptability and Problem Solving</p>
+                    <p>Teamwork and Collaboration</p>
+                    <p>JavaScript and PHP</p>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Work Experience Section */}
+            <motion.div
+              variants={sectionVariants}
+              className="relative p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-400/30 transition-all"
+              whileHover={{ y: -3 }}
+            >
+              <motion.h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 border-b border-gray-700 pb-2 mb-4">
+                WORK EXPERIENCE
+              </motion.h3>
+              <motion.div variants={fadeIn}>
+                <h4 className="font-bold text-blue-300">
+                  Adika Taxi Services PLC.
+                </h4>
+                <p className="text-purple-300 mb-2">Full Stack Web Developer</p>
+                <div className="space-y-2 text-gray-300">
+                  <p>
+                    Designed and developed a full-stack driver registration
+                    system at Adika Taxi PLC—leveraging Laravel for RESTful API
+                    development and backend logic, React.js with JSX for dynamic
+                    user interfaces, MySQL for structured data management, and
+                    Tailwind CSS alongside Bootstrap for responsive and modular
+                    styling.
+                  </p>
+                  <p>
+                    Utilized Postman extensively to test, debug, and document
+                    API endpoints, ensuring robust integration between frontend
+                    and backend components.
+                  </p>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Languages Section */}
+            <motion.div
+              variants={sectionVariants}
+              className="relative p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-400/30 transition-all"
+              whileHover={{ y: -3 }}
+            >
+              <motion.h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 border-b border-gray-700 pb-2 mb-4">
+                LANGUAGES
+              </motion.h3>
+              <motion.div className="text-gray-300" variants={fadeIn}>
+                <p>English (Fluent)</p>
+                <p>Amharic (Native)</p>
+              </motion.div>
+            </motion.div>
+
+            {/* Online Presence Section */}
+            <motion.div
+              variants={sectionVariants}
+              className="relative p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-400/30 transition-all"
+              whileHover={{ y: -3 }}
+            >
+              <motion.h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 border-b border-gray-700 pb-2 mb-4">
+                ONLINE PRESENCE
+              </motion.h3>
+              <motion.div className="flex gap-6" variants={fadeIn}>
+                <motion.a
+                  href="https://github.com/coderun23-cloud"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300"
+                  whileHover={iconHover}
+                >
+                  <GithubIcon className="w-8 h-8" />
+                </motion.a>
+                <motion.a
+                  href="https://www.linkedin.com/in/natnael-getachew-798507256/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300"
+                  whileHover={iconHover}
+                >
+                  <LinkedinIcon className="w-8 h-8" />
+                </motion.a>
+              </motion.div>
+            </motion.div>
           </div>
         </motion.div>
       </main>

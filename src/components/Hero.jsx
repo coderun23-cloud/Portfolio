@@ -74,31 +74,42 @@ export default function Hero() {
       <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
         <div>
           <motion.h1
-            className="text-4xl md:text-6xl font-bold mb-4"
+            className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
             variants={item}
           >
             Hi There! <br />
-            <span className="text-blue-400">I'M Natnael Getachew</span>
+            <motion.h1
+              className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
+              variants={item}
+            >
+              Natnael Getachew{" "}
+            </motion.h1>
           </motion.h1>
 
           <motion.h2
-            className="text-2xl md:text-3xl text-blue-300 mb-8 h-10"
+            className="text-2xl md:text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
             variants={item}
           >
             {jobTitle}
             <span className="animate-pulse">|</span>
           </motion.h2>
 
-          <motion.a
-            href="#contact"
+          <motion.button
+            onClick={() =>
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+            className="bg-gradient-to-r from-blue-900 to-purple-600 hover:from-blue-800 hover:to-purple-500 text-white px-6 py-3 rounded-md text-lg transition-all duration-300 cursor-pointer"
             variants={item}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{
+              scale: 1.05,
+              boxShadow: "0 0 15px rgba(99, 102, 241, 0.5)",
+            }}
             whileTap={{ scale: 0.95 }}
           >
-            <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md text-lg transition duration-300 cursor-pointer">
-              Contact Me
-            </button>
-          </motion.a>
+            Contact Me
+          </motion.button>
         </div>
 
         <motion.div

@@ -1,4 +1,11 @@
 import { motion } from "framer-motion";
+import {
+  CodeBracketIcon,
+  CpuChipIcon,
+  PuzzlePieceIcon,
+  LightBulbIcon,
+} from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 export default function About() {
   const container = {
@@ -24,39 +31,88 @@ export default function About() {
     },
   };
 
+  const aboutPoints = [
+    {
+      text: "I'm Natnael Getachew, a full stack developer crafting responsive apps with Laravel, React.js, MySQL, and Tailwind CSS. I focus on clean architecture, dynamic UIs, and smart backend logic.",
+      icon: <CodeBracketIcon className="w-8 h-8 text-blue-400" />,
+    },
+    {
+      text: "I build sleek, high-performance websites—debugging APIs, managing data, and designing intuitive interfaces with precision.",
+      icon: <CpuChipIcon className="w-8 h-8 text-purple-400" />,
+    },
+    {
+      text: "I bring teamwork and strategy from sports to dev life, adapting fast, solving problems, and growing my skill set constantly.",
+      icon: <PuzzlePieceIcon className="w-8 h-8 text-green-400" />,
+    },
+    {
+      text: "Always learning, I dive into new frameworks to build powerful apps with real-world impact and standout usability.",
+      icon: <LightBulbIcon className="w-8 h-8 text-yellow-400" />,
+    },
+  ];
+
   return (
     <motion.div
-      className="min-h-screen bg-gray-900 text-white flex items-center justify-center px-6 py-12 mt-10"
+      className="min-h-screen bg-gray-900 text-white flex items-center justify-center px-6 py-12"
       id="about"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
       variants={container}
     >
-      <div className="w-full max-w-6xl">
-        <motion.h1
-          className="text-4xl md:text-6xl font-bold mb-12 text-blue-400 text-center "
-          variants={item}
-        >
-          About Me
-        </motion.h1>
+      <div className="w-full max-w-4xl">
+        <motion.div className="text-center mb-16" variants={item}>
+          <motion.h1
+            className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
+            variants={item}
+          >
+            About Me
+          </motion.h1>
+          <motion.div
+            className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"
+            variants={item}
+          />
+        </motion.div>
 
-        <div className="space-y-8 text-lg md:text-xl">
-          {[
-            "Hi, I'm Natnael Getachew — a detail-oriented full stack web developer with practical experience in building scalable, responsive applications using Laravel, React.js, MySQL, and Tailwind CSS. I specialize in clean architecture, dynamic UIs, and efficient backend logic that powers meaningful digital experiences.",
-            "My passion lies in creating intuitive interfaces and performance-driven websites that blend technical excellence with sleek design. Whether it's debugging APIs with Postman or managing structured data with MySQL, I approach every project with precision and creativity.",
-            "I thrive on collaboration and bring the teamwork and strategy I've honed on the soccer and basketball court into every development process. My strength lies in adapting quickly, solving problems effectively, and continuously expanding my tech skill set to stay ahead of trends.",
-            "I'm constantly learning and exploring new frameworks and best practices to deliver modern, high-performing applications. Whether developing a full-stack registration system or refining digital interfaces, I'm driven by the impact great code can have on real-world usability.",
-          ].map((paragraph, index) => (
-            <motion.p
+        <div className="space-y-6">
+          {aboutPoints.map((point, index) => (
+            <motion.div
               key={index}
-              className="text-white leading-relaxed"
+              className="relative pl-16 pr-8 py-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-400/30 transition-all"
               variants={item}
+              whileHover={{ y: -3 }}
             >
-              {paragraph}
-            </motion.p>
+              <div className="absolute left-6 top-6 p-2 bg-gray-900 rounded-lg border border-gray-700">
+                {point.icon}
+              </div>
+              <p className="text-gray-300 leading-relaxed text-lg">
+                {point.text}
+              </p>
+            </motion.div>
           ))}
         </div>
+
+        <motion.div className="mt-16 flex justify-center" variants={item}>
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-200"></div>
+            <button className="relative px-8 py-3 bg-gray-900 rounded-lg border border-gray-700 leading-none flex items-center gap-2">
+              <Link to="/projects">Explore My Work</Link>
+              <svg
+                className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </motion.div>
       </div>
     </motion.div>
   );

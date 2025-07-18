@@ -1,6 +1,6 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import { motion, AnimatePresence, stagger, useAnimate } from "framer-motion";
+import { motion } from "framer-motion";
 import fullstack from "../assets/web.png";
 import api from "../assets/ap.png";
 import db from "../assets/database.png";
@@ -60,44 +60,53 @@ const services = [
 
 const container = {
   hidden: { opacity: 0 },
-  show: {
+  visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.3,
+      staggerChildren: 0.15,
+      when: "beforeChildren",
     },
   },
 };
 
 const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+    },
+  },
 };
 
 const cardHover = {
-  scale: 1.03,
-  boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.4)",
-  transition: { type: "spring", stiffness: 300 },
+  y: -5,
+  boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.3)",
 };
 
 function Service() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
       <Header />
-      <main className="container mx-auto px-4 py-16 flex-grow">
-        <motion.h1
+      <main className="container mx-auto px-6 py-20">
+        <motion.div
+          className="text-center mb-16"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-4xl md:text-5xl font-bold mb-16 text-center text-blue-400"
+          transition={{ duration: 0.8 }}
         >
-          My Services
-        </motion.h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+            My Services
+          </h1>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full" />
+        </motion.div>
 
         <motion.div
           variants={container}
           initial="hidden"
-          animate="show"
+          animate="visible"
           className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
         >
           {services.map((service) => (
@@ -105,32 +114,25 @@ function Service() {
               key={service.id}
               variants={item}
               whileHover={cardHover}
-              whileTap={{ scale: 0.98 }}
-              viewport={{ once: true, margin: "0px 0px -100px 0px" }}
-              className="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-400 transition-all"
+              className="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-400/30 transition-all flex flex-col h-full"
             >
-              <motion.div
-                className="h-48 overflow-hidden"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              >
+              <div className="h-48 overflow-hidden border-b border-gray-700">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
-              </motion.div>
+              </div>
 
-              <motion.div
-                className="p-6"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-              >
-                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                <p className="text-gray-300 mb-4">{service.description}</p>
-              </motion.div>
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-2xl font-semibold mb-3 text-blue-300">
+                  {service.title}
+                </h3>
+                <p className="text-gray-300 mb-6 flex-grow">
+                  {service.description}
+                </p>
+              </div>
             </motion.div>
           ))}
         </motion.div>
