@@ -3,6 +3,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { FaDatabase } from "react-icons/fa";
+
 import {
   CodeBracketIcon,
   CpuChipIcon,
@@ -13,24 +15,26 @@ import {
 function Skills() {
   const skillCategories = [
     {
-      title: "Languages",
-      skills: ["C++", "JavaScript", "PHP"],
-      icons: ["cplusplus", "javascript", "php"],
+      title: "Programming",
+      icons: ["cplusplus", "javascript", "php", "python", "sql"],
     },
     {
-      title: "Front End",
-      skills: ["HTML", "CSS", "React", "Bootstrap", "Tailwind"],
-      icons: ["html5", "css3", "react", "bootstrap", "tailwindcss"],
-    },
-    {
-      title: "Back End",
-      skills: ["PHP", "Laravel", "MySQL", "REST API"],
-      icons: ["php", "laravel", "mysql", "api"],
+      title: "Development",
+      icons: [
+        "html5",
+        "css3",
+        "react",
+        "bootstrap",
+        "tailwindcss",
+        "php",
+        "laravel",
+        "mysql",
+        "api",
+      ],
     },
     {
       title: "Tools",
-      skills: ["Postman", "Chart.js", "GitHub", "VS Code", "Vercel"],
-      icons: ["postman", "chartjs", "github", "vscode", "vercel"],
+      icons: ["postman", "chartjs", "github", "vscode", "vercel", "pycharm"],
     },
   ];
 
@@ -104,7 +108,7 @@ function Skills() {
                   animate={inView ? "visible" : "hidden"}
                   className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 justify-items-center"
                 >
-                  {category.skills.map((skill, index) => (
+                  {category.icons.map((icon, index) => (
                     <motion.div
                       key={index}
                       variants={item}
@@ -112,17 +116,29 @@ function Skills() {
                         scale: 1.05,
                         boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.3)",
                       }}
-                      className="flex items-center justify-center bg-gray-800 rounded-xl w-full aspect-square border-2 border-gray-700 hover:border-blue-400/30 transition-all "
-                      title={skill} // Add title attribute for tooltip
+                      title={icon.charAt(0).toUpperCase() + icon.slice(1)}
+                      className="flex items-center justify-center bg-gray-800 rounded-xl w-full aspect-square border-2 border-gray-700 hover:border-blue-400/30 transition-all"
                     >
-                      {category.icons[index] === "api" ? (
-                        <FaServer className="text-blue-400 text-5xl" />
-                      ) : category.icons[index] === "chartjs" ? (
-                        <FaChartPie className="text-purple-400 text-5xl" />
+                      {icon === "api" ? (
+                        <FaServer
+                          className="text-blue-400 text-5xl"
+                          title="REST API"
+                        />
+                      ) : icon === "chartjs" ? (
+                        <FaChartPie
+                          className="text-purple-400 text-5xl"
+                          title="Chart.js"
+                        />
+                      ) : icon === "sql" ? (
+                        <FaDatabase
+                          className="text-yellow-400 text-5xl"
+                          title="SQL"
+                        />
                       ) : (
                         <img
-                          src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${category.icons[index]}/${category.icons[index]}-original.svg`}
-                          alt={skill}
+                          src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}/${icon}-original.svg`}
+                          alt={icon}
+                          title={icon.charAt(0).toUpperCase() + icon.slice(1)}
                           className="w-16 h-16 object-contain"
                         />
                       )}
