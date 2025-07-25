@@ -16,7 +16,7 @@ function Skills() {
   const skillCategories = [
     {
       title: "Programming",
-      icons: ["cplusplus", "javascript", "php", "python", "sql"],
+      icons: ["c++", "javascript", "php", "python", "sql"],
     },
     {
       title: "Development",
@@ -117,21 +117,21 @@ function Skills() {
                         boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.3)",
                       }}
                       title={icon.charAt(0).toUpperCase() + icon.slice(1)}
-                      className="flex items-center justify-center bg-gray-800 rounded-xl w-full aspect-square border-2 border-gray-700 hover:border-blue-400/30 transition-all"
+                      className="flex items-center justify-center bg-transparent rounded-xl w-50 h-43 border border-transparent bg-gradient-to-br from-gray-800 to-gray-900 p-[2px] hover:from-blue-500/30 hover:to-gray-900 transition-all shadow-md hover:shadow-blue-500/30"
                     >
                       {icon === "api" ? (
                         <FaServer
-                          className="text-blue-400 text-5xl"
+                          className="text-blue-400 text-6xl"
                           title="REST API"
                         />
                       ) : icon === "chartjs" ? (
                         <FaChartPie
-                          className="text-purple-400 text-5xl"
+                          className="text-purple-400 text-6xl"
                           title="Chart.js"
                         />
                       ) : icon === "sql" ? (
                         <FaDatabase
-                          className="text-yellow-400 text-5xl"
+                          className="text-yellow-400 text-6xl"
                           title="SQL"
                         />
                       ) : (
@@ -139,7 +139,7 @@ function Skills() {
                           src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${icon}/${icon}-original.svg`}
                           alt={icon}
                           title={icon.charAt(0).toUpperCase() + icon.slice(1)}
-                          className="w-16 h-16 object-contain"
+                          className="w-20 h-20 object-contain"
                         />
                       )}
                     </motion.div>

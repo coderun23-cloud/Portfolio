@@ -197,10 +197,13 @@ function Resume() {
                     <p>React JS</p>
                     <p>Tailwind CSS and Bootstrap</p>
                     <p>MySQL</p>
+                    <p>PHP</p>
+                    <p>Javascript</p>
                     <p>GitHub/Git</p>
                     <p>Postman</p>
                     <p>REST API</p>
                     <p>C++ Programming</p>
+                    <p>Python</p>
                     <p>API Integration</p>
                     <p>Software Documentation</p>
                   </div>
@@ -208,9 +211,11 @@ function Resume() {
                 <div>
                   <h4 className="font-bold mb-2 text-blue-300">Other Skills</h4>
                   <div className="space-y-1 text-gray-300">
-                    <p>Adaptability and Problem Solving</p>
-                    <p>Teamwork and Collaboration</p>
-                    <p>JavaScript and PHP</p>
+                    <p>Adaptability</p>
+                    <p>Problem Solving</p>
+                    <p>Teamwork</p>
+                    <p> Collaboration</p>
+                    <p>Time Management</p>
                   </div>
                 </div>
               </motion.div>
