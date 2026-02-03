@@ -56,6 +56,31 @@ const services = [
     image: payment,
     link: "#",
   },
+  {
+  id: 7,
+  title: "Network Monitoring",
+  description:
+    "Design and implement monitoring solutions using tools like Zabbix, Prometheus, and Grafana to track network health, performance, and availability.",
+  image: monitoring,
+  link: "#",
+},
+{
+  id: 8,
+  title: "Network Automation",
+  description:
+    "Automate network configuration and operations using Ansible, AWX, and Cisco DNA Center to ensure consistency, scalability, and reduced manual effort.",
+  image: automation,
+  link: "#",
+},
+{
+  id: 9,
+  title: "Wireless Network Solutions",
+  description:
+    "Design, configure, and manage Cisco wireless networks with a focus on performance, reliability, and enterprise best practices.",
+  image: wireless,
+  link: "#",
+},
+
 ];
 
 const container = {

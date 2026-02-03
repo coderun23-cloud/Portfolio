@@ -14,6 +14,8 @@ export default function Hero() {
     "React.js Developer",
     "Database Designer",
     "API Integration",
+    "Network Automater",
+    "Wireless Solution"
   ];
 
   useEffect(() => {

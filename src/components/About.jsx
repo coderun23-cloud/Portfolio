@@ -4,6 +4,11 @@ import {
   CpuChipIcon,
   PuzzlePieceIcon,
   LightBulbIcon,
+  DatabaseIcon,
+  ServerIcon,
+  WifiIcon,
+  ChartBarIcon
+
 } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 
@@ -31,24 +36,43 @@ export default function About() {
     },
   };
 
-  const aboutPoints = [
-    {
-      text: "I'm Natnael Getachew, a full stack developer crafting responsive apps with Laravel, React.js, MySQL, and Tailwind CSS. I focus on clean architecture, dynamic UIs, and smart backend logic.",
-      icon: <CodeBracketIcon className="w-8 h-8 text-blue-400" />,
-    },
-    {
-      text: "I build sleek, high-performance websites—debugging APIs, managing data, and designing intuitive interfaces with precision.",
-      icon: <CpuChipIcon className="w-8 h-8 text-purple-400" />,
-    },
-    {
-      text: "I bring teamwork and strategy from sports to dev life, adapting fast, solving problems, and growing my skill set constantly.",
-      icon: <PuzzlePieceIcon className="w-8 h-8 text-green-400" />,
-    },
-    {
-      text: "Always learning, I dive into new frameworks to build powerful apps with real-world impact and standout usability.",
-      icon: <LightBulbIcon className="w-8 h-8 text-yellow-400" />,
-    },
-  ];
+const aboutPoints = [
+  {
+    text: "I'm Natnael Getachew, a full stack developer crafting responsive apps with Laravel, React.js, MySQL, and Tailwind CSS. I focus on clean architecture, dynamic UIs, and smart backend logic.",
+    icon: <CodeBracketIcon className="w-8 h-8 text-blue-400" />,
+  },
+  {
+    text: "I build sleek, high-performance websites—debugging APIs, managing data, and designing intuitive interfaces with precision.",
+    icon: <CpuChipIcon className="w-8 h-8 text-purple-400" />,
+  },
+  {
+    text: "I bring teamwork and strategy from sports to dev life, adapting fast, solving problems, and growing my skill set constantly.",
+    icon: <PuzzlePieceIcon className="w-8 h-8 text-green-400" />,
+  },
+  {
+    text: "Always learning, I dive into new frameworks to build powerful apps with real-world impact and standout usability.",
+    icon: <LightBulbIcon className="w-8 h-8 text-yellow-400" />,
+  },
+
+  // ✅ Added — Network Automation & Networking focus
+  {
+    text: "I specialize in network automation using Ansible, writing repeatable and reliable playbooks to configure, validate, and manage network devices.",
+    icon: <ServerIcon className="w-8 h-8 text-cyan-400" />,
+  },
+  {
+    text: "I use NetBox as a Source of Truth to model network inventory, IP addressing, and device metadata for automated workflows.",
+    icon: <DatabaseIcon className="w-8 h-8 text-indigo-400" />,
+  },
+  {
+    text: "I work with Cisco networking and wireless technologies, focusing on structured configuration, consistency, and operational best practices.",
+    icon: <WifiIcon className="w-8 h-8 text-sky-400" />,
+  },
+  {
+    text: "I integrate monitoring and visibility into network operations to track device status, performance, and reliability.",
+    icon: <ChartBarIcon className="w-8 h-8 text-green-400" />,
+  },
+];
+
 
   return (
     <motion.div

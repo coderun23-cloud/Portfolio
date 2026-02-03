@@ -87,7 +87,8 @@ function Resume() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, type: "spring" }}
             >
-              FULL STACK WEB DEVELOPER
+              FULL STACK DEVELOPER | NETWORK AUTOMATION & MONITORING
+
             </motion.h2>
             <div className="mt-8">
               <motion.a
@@ -142,16 +143,8 @@ function Resume() {
                 PROFILE
               </motion.h3>
               <motion.p variants={fadeIn} className="text-gray-300">
-                Detail-oriented and innovative web developer with hands-on
-                experience building responsive, full-stack applications. Skilled
-                in Laravel, React.js, MySQL, Tailwind CSS, Bootstrap, and
-                RESTful APIs, with practical knowledge of Postman for API
-                testing and debugging. A natural collaborator who thrives in
-                team settings—both in tech and in sports—bringing strong
-                communication, adaptability, and strategic thinking from soccer
-                and basketball into every development project. Committed to
-                creating scalable, user-focused solutions that drive real-world
-                impact.
+         Additionally, developing strong expertise in network automation and infrastructure engineering, with hands-on experience using Ansible, NetBox, Cisco DNA Center, and Linux-based environments. Familiar with enterprise monitoring solutions such as Zabbix, Prometheus, and Grafana, and focused on building reliable, scalable, and automated network operations.
+
               </motion.p>
             </motion.div>
 
@@ -206,6 +199,15 @@ function Resume() {
                     <p>Python</p>
                     <p>API Integration</p>
                     <p>Software Documentation</p>
+                    <p>Ansible (Network Automation)</p>
+                    <p>AWX / Ansible Tower</p>
+                    <p>NetBox (Source of Truth)</p>
+                    <p>Cisco DNA Center</p>
+                    <p>Cisco Wireless Networking</p>
+                    <p>Network Monitoring (Zabbix, Prometheus, Grafana)</p>
+                    <p>Linux (Ubuntu)</p>
+                    <p>CI/CD Fundamentals (GitHub Actions)</p>
+
                   </div>
                 </div>
                 <div>

@@ -13,30 +13,49 @@ import {
 } from "@heroicons/react/24/outline";
 
 function Skills() {
-  const skillCategories = [
-    {
-      title: "Programming",
-      icons: ["cplusplus", "javascript", "php", "python", "sql"],
-    },
-    {
-      title: "Development",
-      icons: [
-        "html5",
-        "css3",
-        "react",
-        "bootstrap",
-        "tailwindcss",
-        "php",
-        "laravel",
-        "mysql",
-        "api",
-      ],
-    },
-    {
-      title: "Tools",
-      icons: ["postman", "chartjs", "github", "vscode", "vercel", "pycharm"],
-    },
-  ];
+const skillCategories = [
+  {
+    title: "Programming",
+    icons: ["cplusplus", "javascript", "php", "python", "sql"],
+  },
+  {
+    title: "Development",
+    icons: [
+      "html5",
+      "css3",
+      "react",
+      "bootstrap",
+      "tailwindcss",
+      "php",
+      "laravel",
+      "mysql",
+      "api",
+    ],
+  },
+  {
+    title: "Tools",
+    icons: [
+      "postman",
+      "chartjs",
+      "github",
+      "vscode",
+      "vercel",
+      "pycharm",
+      // ✅ added
+      "zabbix",
+      "prometheus",
+      "grafana",
+      "netbox",
+      "ciscodnac",
+    ],
+  },
+  {
+    // ✅ NEW CATEGORY
+    title: "Automation",
+    icons: ["ansible", "awx", "ciscodnac"],
+  },
+];
+
 
   const container = {
     hidden: { opacity: 0 },
